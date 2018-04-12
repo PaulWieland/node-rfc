@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Security &mdash; node-rfc 0.1.3 documentation</title>
-    
+    <title>Security &#8212; node-rfc 0.1.14 documentation</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1.3',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="node-rfc 0.1.3 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Remarks" href="remarks.html" />
     <link rel="prev" title="Installation" href="install.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
+  </head><body>
+    <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
-          href="index.html">node-rfc 0.1.3 documentation</a></div>
-        <div class="rel">
+          href="index.html">node-rfc 0.1.14 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="install.html" title="Installation"
              accesskey="P">previous</a> |
           <a href="remarks.html" title="Remarks"
@@ -49,7 +39,7 @@
             
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="security">
 <span id="authentication"></span><h1>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h1>
@@ -83,7 +73,7 @@ for testing plain and secure RFC connections, with various authentication method
 <div class="section" id="plain-auth">
 <span id="id2"></span><h3>Plain with user / password<a class="headerlink" href="#plain-auth" title="Permalink to this headline">¶</a></h3>
 <p>The simplest and least secure form of the user authentication.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">ABAP_SYSTEM</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">ABAP_SYSTEM</span> <span class="o">=</span> <span class="p">{</span>
      <span class="s1">&#39;user&#39;</span><span class="o">:</span> <span class="s1">&#39;demo&#39;</span><span class="p">,</span>
      <span class="s1">&#39;passwd&#39;</span><span class="o">:</span> <span class="s1">&#39;welcome&#39;</span><span class="p">,</span>
 
@@ -114,7 +104,7 @@ is used for opening the SNC connection and the same user is used for the authent
 <ul class="simple">
 <li>SAP Single Sign On must be configured on a client and the user must be logged in on a client.</li>
 </ul>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">ABAP_SYSTEM</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">ABAP_SYSTEM</span> <span class="o">=</span> <span class="p">{</span>
      <span class="s1">&#39;snc_partnername&#39;</span><span class="o">:</span> <span class="s1">&#39;p:CN=I64, O=SAP-AG, C=DE&#39;</span><span class="p">,</span>
      <span class="s1">&#39;snc_lib&#39;</span><span class="o">:</span> <span class="s1">&#39;C:\\Program Files (x86)\\SECUDE\\OfficeSecurity\\secude.dll&#39;</span><span class="p">,</span>
 
@@ -165,7 +155,7 @@ the environment variable SECUDIR points to the folder with generated keystores</
 <img alt="_images/EXTID_DN-2.png" src="_images/EXTID_DN-2.png" />
 </div>
 <p>The same connection parameters as in a previous example, with X509 certificate added.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="nx">ABAP_SYSTEM</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">ABAP_SYSTEM</span> <span class="o">=</span> <span class="p">{</span>
      <span class="s1">&#39;snc_partnername&#39;</span><span class="o">:</span> <span class="s1">&#39;p:CN=I64, O=SAP-AG, C=DE&#39;</span><span class="p">,</span>
      <span class="s1">&#39;snc_lib&#39;</span><span class="o">:</span> <span class="s1">&#39;C:\\Program Files (x86)\\SECUDE\\OfficeSecurity\\secude.dll&#39;</span><span class="p">,</span>
 
@@ -197,26 +187,23 @@ the environment variable SECUDIR points to the folder with generated keystores</
           <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Security</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Security</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Authentication</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="remarks.html">Remarks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
-<ul class="simple">
-</ul>
 
-          <h3 style="margin-top: 1.5em;">Search</h3>
-          <form class="search" action="search.html" method="get">
-            <input type="text" name="q" />
-            <input type="submit" value="Go" />
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
-          <p class="searchtip" style="font-size: 90%">
-            Enter search terms or a module, class or function name.
-          </p>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
         </div>
         <div class="clearer"></div>
       </div>
@@ -225,23 +212,27 @@ the environment variable SECUDIR points to the folder with generated keystores</
     <div class="footer-wrapper">
       <div class="footer">
         <div class="left">
-          <a href="install.html" title="Installation"
-             >previous</a> |
-          <a href="remarks.html" title="Remarks"
-             >next</a> |
-          <a href="genindex.html" title="General Index"
-             >index</a>
-            <br/>
-            <a href="_sources/authentication.txt"
-               rel="nofollow">Show Source</a>
+          <div role="navigation" aria-label="related navigaton">
+            <a href="install.html" title="Installation"
+              >previous</a> |
+            <a href="remarks.html" title="Remarks"
+              >next</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/authentication.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
         </div>
 
         <div class="right">
           
-    <div class="footer">
-        &copy; Copyright 2014, SAP AG.
-      Last updated on Aug 06, 2014.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014, SAP AG.
+      Last updated on Apr 12, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
         </div>
         <div class="clearer"></div>

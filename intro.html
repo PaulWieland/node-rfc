@@ -1,38 +1,28 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Introduction &mdash; node-rfc 0.1.3 documentation</title>
-    
+    <title>Introduction &#8212; node-rfc 0.1.14 documentation</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1.3',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="node-rfc 0.1.3 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="install.html" />
     <link rel="prev" title="node-rfc - SAP RFC Connector for NodeJS" href="index.html" /> 
-  </head>
-  <body>
-    <div class="header-wrapper">
+  </head><body>
+    <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
-          href="index.html">node-rfc 0.1.3 documentation</a></div>
-        <div class="rel">
+          href="index.html">node-rfc 0.1.14 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="index.html" title="node-rfc - SAP RFC Connector for NodeJS"
              accesskey="P">previous</a> |
           <a href="install.html" title="Installation"
@@ -49,12 +39,12 @@
             
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="introduction">
 <span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>The NodeJS connector (a synonym for the <tt class="xref py py-mod docutils literal"><span class="pre">node-rfc</span></tt> package) wraps the existing <em>SAP NW RFC Library</em>,
-often colloquially called <em>SAP C connector</em> or <em>SAP NW RFC SDK</em>. To start using <tt class="xref py py-mod docutils literal"><span class="pre">node-rfc</span></tt>
+<p>The NodeJS connector (a synonym for the <code class="xref py py-mod docutils literal notranslate"><span class="pre">node-rfc</span></code> package) wraps the existing <em>SAP NW RFC Library</em>,
+often colloquially called <em>SAP C connector</em> or <em>SAP NW RFC SDK</em>. To start using <code class="xref py py-mod docutils literal notranslate"><span class="pre">node-rfc</span></code>
 and similar connectors effectively, we highly recommend reading a series of insightful articles
 about RFC communication and <em>SAP NW RFC Library</em>, published in the SAP Professional Journal (SPJ),
 in 2009, by Ulrich Schmidt and Guangwei Li: <em>Improve communication between your C/C++ applications
@@ -63,14 +53,14 @@ and SAP systems with SAP NetWeaver RFC SDK</em>
 <a class="reference external" href="http://www.sdn.sap.com/irj/scn/go/portal/prtroot/docs/library/uuid/b02b0719-4ccc-2c10-71ab-fe31483e466f">Part 2: RFC server programs</a>,
 <a class="reference external" href="http://www.sdn.sap.com/irj/sdn/go/portal/prtroot/docs/library/uuid/5070f62a-6acd-2c10-8cb5-858ef06adbb9">Part 3: Advanced topics</a>.</p>
 <p>The lecture of these articles and <a class="reference external" href="http://help.sap.com/saphelp_nw73ehp1/helpdata/en/48/a88c805134307de10000000a42189b/content.htm?frameset=/en/48/a994a77e28674be10000000a421937/frameset.htm">NW RFC SDK Guide (SAP Help)</a>
-are recommended as an introduction into RFC communication and programming, while <tt class="xref py py-mod docutils literal"><span class="pre">node-rfc</span></tt> documentation is
-focused merely on technical aspects of <tt class="xref py py-mod docutils literal"><span class="pre">node-rfc</span></tt> API.</p>
+are recommended as an introduction into RFC communication and programming, while <code class="xref py py-mod docutils literal notranslate"><span class="pre">node-rfc</span></code> documentation is
+focused merely on technical aspects of <code class="xref py py-mod docutils literal notranslate"><span class="pre">node-rfc</span></code> API.</p>
 <div class="section" id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
 <p>In order to call remote enabled ABAP function module, we need to create a client with
 valid logon credentials, connect to the nw system and then we can invoke a remote enabled
 ABAP function module from node.</p>
-<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">rfc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node-rfc&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">rfc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;node-rfc&#39;</span><span class="p">);</span>
 
 <span class="c1">// create new client</span>
 <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">rfc</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span><span class="s1">&#39;user&#39;</span><span class="o">:</span> <span class="s1">&#39;demo&#39;</span><span class="p">,</span> <span class="s1">&#39;passwd&#39;</span><span class="o">:</span> <span class="s1">&#39;welcome&#39;</span><span class="p">,</span> <span class="s1">&#39;ashost&#39;</span><span class="o">:</span> <span class="s1">&#39;10.0.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;sysnr&#39;</span><span class="o">:</span> <span class="s1">&#39;00&#39;</span><span class="p">,</span> <span class="s1">&#39;client&#39;</span><span class="o">:</span> <span class="s1">&#39;001&#39;</span><span class="p">});</span>
@@ -95,7 +85,7 @@ ABAP function module from node.</p>
 </pre></div>
 </div>
 <p>Finally, the connection is closed automatically when the instance is deleted by the garbage collector
-or by explicitly calling the <tt class="xref py py-meth docutils literal"><span class="pre">Client.close()</span></tt> method on the client instance.</p>
+or by explicitly calling the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Client.close()</span></code> method on the client instance.</p>
 </div>
 <div class="section" id="data-types">
 <h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
@@ -136,63 +126,63 @@ built-in types.</p>
 <td>Floating point number</td>
 <td>FLOAT</td>
 <td>Number</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>numeric</td>
 <td>P</td>
 <td>Packed number / BCD number</td>
 <td>BCD</td>
 <td>Number</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>character</td>
 <td>C</td>
 <td>Text field (alphanumeric characters)</td>
 <td>CHAR</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>character</td>
 <td>D</td>
 <td>Date field (Format: YYYYMMDD)</td>
 <td>DATE</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>character</td>
 <td>T</td>
 <td>Time field (Format: HHMMSS)</td>
 <td>TIME</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>character</td>
 <td>N</td>
 <td>Numeric text field (numeric characters)</td>
 <td>NUM</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>hexadecimal</td>
 <td>X</td>
 <td>Hexadecimal field</td>
 <td>BYTE</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>variable length</td>
 <td>STRING</td>
 <td>Dynamic length string</td>
 <td>STRING</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>variable length</td>
 <td>XSTRING</td>
 <td>Dynamic length hexadecimal string</td>
 <td>BYTE</td>
 <td>string</td>
-<td>&nbsp;</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -203,7 +193,7 @@ in the corresponding Javascript type.
 Beside the mentioned types, there are tables and structures:</p>
 <ul class="simple">
 <li>A structure is represented in Javascript by an object, with the
-structure fields&#8217; names as dictionary keys.</li>
+structure fields’ names as dictionary keys.</li>
 <li>A table is represented in Javascript by a list of objects.</li>
 </ul>
 </div>
@@ -217,7 +207,7 @@ structure fields&#8217; names as dictionary keys.</li>
         <div class="sidebar">
           <h3>Table Of Contents</h3>
           <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#example-usage">Example usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-types">Data types</a></li>
 </ul>
@@ -227,19 +217,16 @@ structure fields&#8217; names as dictionary keys.</li>
 <li class="toctree-l1"><a class="reference internal" href="remarks.html">Remarks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
-<ul class="simple">
-</ul>
 
-          <h3 style="margin-top: 1.5em;">Search</h3>
-          <form class="search" action="search.html" method="get">
-            <input type="text" name="q" />
-            <input type="submit" value="Go" />
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
-          <p class="searchtip" style="font-size: 90%">
-            Enter search terms or a module, class or function name.
-          </p>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
         </div>
         <div class="clearer"></div>
       </div>
@@ -248,23 +235,27 @@ structure fields&#8217; names as dictionary keys.</li>
     <div class="footer-wrapper">
       <div class="footer">
         <div class="left">
-          <a href="index.html" title="node-rfc - SAP RFC Connector for NodeJS"
-             >previous</a> |
-          <a href="install.html" title="Installation"
-             >next</a> |
-          <a href="genindex.html" title="General Index"
-             >index</a>
-            <br/>
-            <a href="_sources/intro.txt"
-               rel="nofollow">Show Source</a>
+          <div role="navigation" aria-label="related navigaton">
+            <a href="index.html" title="node-rfc - SAP RFC Connector for NodeJS"
+              >previous</a> |
+            <a href="install.html" title="Installation"
+              >next</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/intro.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
         </div>
 
         <div class="right">
           
-    <div class="footer">
-        &copy; Copyright 2014, SAP AG.
-      Last updated on Aug 06, 2014.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014, SAP AG.
+      Last updated on Apr 12, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
         </div>
         <div class="clearer"></div>
