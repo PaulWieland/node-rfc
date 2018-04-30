@@ -1,20 +1,24 @@
 ```shell
 git checkout master
 
-# ~ package.json and VERSION musti be bumped, before release build
+# ~ package.json and VERSION must be bumped, before release build
+
+
+```shell
+git checkout master
 
 cd doc
-make clean
-make html
+make clean && make html
+
 rm -Rf ~/tmp/*
 cp -r _build/html/ ~/tmp
-cd ..
-# ~ commit & push ~
+git commit 
 
 git checkout gh-pages
 rm -Rf *.html *.js *.egg build doc _* pyrfc* *.inv node_modules
 cp -Rf ~/tmp/html/. .
 rm -Rf _sources .buildinfo
+
 # ~ commit & push ~
 
 # tag

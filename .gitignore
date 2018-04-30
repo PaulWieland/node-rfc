@@ -11,3 +11,5 @@ atlassian-ide-plugin.xml
 node_modules
 doc/_build
 _sources
+.buildinfo
+
