@@ -13,6 +13,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Security" href="authentication.html" />
@@ -45,8 +46,8 @@
 <span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>If <a class="reference external" href="https://support.sap.com/en/product/connectors/nwrfcsdk.html">SAP NetWeaver RFC SDK</a> and <a class="reference external" href="http://nodejs.org/">NodeJS</a>
 are already installed on your system, you can install the <code class="xref py py-mod docutils literal notranslate"><span class="pre">node-rfc</span></code> package from npm, or build from source.</p>
-<p>You may use the current or any of <a class="reference external" href="https://github.com/nodejs/Release">LTS node releases</a> and considering the SAP NW RFC SDK
-is fully backwards compatible, using the latest SAP NW RFC SDK release is reccomended.</p>
+<p>You may use the current or any of <a class="reference external" href="https://github.com/nodejs/Release">LTS node releases</a> and the latest SAP NW RFC SDK
+release (fully backwards compatible).</p>
 <div class="section" id="sap-nw-rfc-sdk-installation">
 <span id="install-c-connector"></span><h2>SAP NW RFC SDK Installation<a class="headerlink" href="#sap-nw-rfc-sdk-installation" title="Permalink to this headline">¶</a></h2>
 <p>Information on where to download the SAP NW RFC SDK you may find <a class="reference external" href="https://support.sap.com/en/product/connectors/nwrfcsdk.html">here</a> .</p>
@@ -58,8 +59,8 @@ NodeJS connector where to look.</p>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Create the SAP NW RFC SDK root directory, e.g. <code class="docutils literal notranslate"><span class="pre">c:\nwrfcsdk</span></code></li>
-<li>Set SAPNWRFC_HOME environment variable to that location: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=c:\nwrfcsdk</span></code></li>
+<li>Create the SAP NW RFC SDK home directory, e.g. <code class="docutils literal notranslate"><span class="pre">c:\nwrfcsdk</span></code></li>
+<li>Set SAPNWRFC_HOME environment variable: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=c:\nwrfcsdk</span></code></li>
 <li>Unpack the SAP NW RFC SDK archive to it, e.g. <code class="docutils literal notranslate"><span class="pre">c:\nwrfcsdk\lib</span></code> shall exist.</li>
 <li>Include the <code class="docutils literal notranslate"><span class="pre">lib</span></code> directory to the library search path on Windows, i.e.
 <a class="reference internal" href="#install-problems-envvar-win"><span class="std std-ref">extend</span></a> the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</li>
@@ -69,9 +70,9 @@ NodeJS connector where to look.</p>
 <div class="section" id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Create the SAP NW RFC SDK root directory, e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk</span></code>.</p>
+<li><p class="first">Create the SAP NW RFC SDK home directory, e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk</span></code>.</p>
 </li>
-<li><p class="first">Set SAPNWRFC_HOME environment variable to that location: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=/usr/local/sap/nwrfcsdk</span></code></p>
+<li><p class="first">Set the SAPNWRFC_HOME environment variable: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=/usr/local/sap/nwrfcsdk</span></code></p>
 </li>
 <li><p class="first">Unpack the SAP NW RFC SDK archive to it, e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk/lib</span></code> shall exist.</p>
 </li>
@@ -104,10 +105,16 @@ $
 </div>
 <div class="section" id="macos">
 <h3>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
+<p>The macOS firewall stealth mode is by default active, blocking the ICMP protocol based network access to Macbook. Applications like
+Ping do not work by default (<a class="reference external" href="https://discussions.apple.com/thread/2554739">Can’t ping a machine - why?</a>) and the stealth mode
+must be disabled:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`shell</span>
+<span class="pre">sudo</span> <span class="pre">/usr/libexec/ApplicationFirewall/socketfilterfw</span> <span class="pre">--setstealthmode</span> <span class="pre">on</span>
+<span class="pre">`</span></code></p>
 <ol class="arabic">
-<li><p class="first">Create the SAP NW RFC SDK root directory <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk</span></code> (this location is fixed, more info below)</p>
+<li><p class="first">Create the SAP NW RFC SDK home directory <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk</span></code> (this location is fixed, more info below)</p>
 </li>
-<li><p class="first">Set SAPNWRFC_HOME environment variable to that location: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=/usr/local/sap/nwrfcsdk</span></code></p>
+<li><p class="first">Set SAPNWRFC_HOME environment variable: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=/usr/local/sap/nwrfcsdk</span></code></p>
 </li>
 <li><p class="first">Unpack the SAP NW RFC SDK archive to it, e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk/lib</span></code> shall exist.</p>
 </li>
@@ -361,8 +368,8 @@ touch .nojekyll
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2014, SAP AG.
-      Last updated on Dec 12, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+      Last updated on Feb 20, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
     </div>
         </div>
         <div class="clearer"></div>
