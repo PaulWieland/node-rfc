@@ -12,3 +12,5 @@ node_modules
 doc/_build
 _sources
 .buildinfo
+prebuilds
+lib
