@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Change log &#8212; node-rfc 1.0.0 documentation</title>
+    <title>Change log &#8212; node-rfc 1.0.3 documentation</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -19,7 +19,7 @@
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
-          href="index.html">node-rfc 1.0.0 documentation</a></div>
+          href="index.html">node-rfc 1.0.3 documentation</a></div>
         <div class="rel" role="navigation" aria-label="related navigation">
           <a href="bibliography.html" title="Bibliography"
              accesskey="P">previous</a> |
@@ -40,7 +40,32 @@
   <div class="section" id="change-log">
 <h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>1.0.0 (2019-10-02)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>1.0.3 (2019-11-15)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Windows build options and warning clean-up</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>1.0.2 (2019-11-11)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ping confirms the connection handle validity</p></li>
+<li><p>Unit tests for ABAP errors</p></li>
+<li><p>CI scripts: SAP NWRFC SDK version, NodeJS version manager</p></li>
+<li><p>INT1 and INT2 overflow check</p></li>
+<li><p>Input parameter array check added, fix #100</p></li>
+<li><p>Connection options support in Connection Pool, fix #104</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>1.0.1 (2019-10-09)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Min NodeJS version fixed in package.json, per <a class="reference external" href="https://nodejs.org/dist/latest/docs/api/n-api.html#n_api_n_api_version_matrix">https://nodejs.org/dist/latest/docs/api/n-api.html#n_api_n_api_version_matrix</a></p></li>
+<li><p>README: N-API badge added</p></li>
+<li><p>ABAP decimal floating point data types added: RFCTYPE_DECF16 and RFCTYPE_DECF34</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>1.0.0 (2019-10-02)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>NAPI 1.0.0 RC merged back to master 1.0.0 release</p></li>
 <li><p>Build documentation update</p></li>
@@ -51,7 +76,7 @@
 <ul class="simple">
 <li><p>NodeJS version 6 dropped</p></li>
 <li><p>Input parameter array check added, fix #100</p></li>
-<li><p>Connection options support in Conncetion Pool, fix #104</p></li>
+<li><p>Connection options support in Connection Pool, fix #104</p></li>
 <li><p>Build tools changed, node-gyp and node-pregyp replaced with cmake-js and prebuild, fix #72</p></li>
 </ul>
 </div>
@@ -164,15 +189,15 @@
 <li><p>XSTRING and BYTE types work with Buffers only</p></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>0.1.16 (2018-27-04)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>0.1.16 (2018-27-04)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Decimal and Float input conversions #52 fix</p></li>
 <li><p>Decimal libraries support, like decimal.js</p></li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>0.1.15 (2018-20-04)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>0.1.15 (2018-20-04)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Import parameters type check added</p></li>
 <li><p>Deprecated Nan::MakeCallback() replaced with Nan:Call()</p></li>
@@ -180,43 +205,43 @@
 <li><p>Skip not needed parameters (not “supplied” / “requested” on ABAP side)</p></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>0.1.14 (2018-04-03)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>0.1.14 (2018-04-03)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Memory leak fix [CRITICAL]</p></li>
 <li><p>Source code cleanup</p></li>
 <li><p>vscode settings for editing on Mac</p></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2>0.1.13 (2017-12-05)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>0.1.13 (2017-12-05)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Catching constuctor errors</p></li>
 <li><p>Fix issue 35, libstdc++ location fix</p></li>
 <li><p>Tabs and formatting</p></li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h2>0.1.12 (2017-11-29)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>0.1.12 (2017-11-29)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>4, 6 and 8 lts binaries</p></li>
 <li><p>byte arrays handling</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2>0.1.11 (2017-01-13)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>0.1.11 (2017-01-13)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Deployment test, no changes</p></li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h2>0.1.7 (2016-12-23)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2>0.1.7 (2016-12-23)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>CI support</p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h2>0.1.6 (2016-11-22)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2>0.1.6 (2016-11-22)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>NAN for easier nodejs release independent development</p></li>
 <li><p>Fix issue 19, nodejs 6 support</p></li>
@@ -224,22 +249,22 @@
 <li><p>Fix issue 17, avoid binding.gyp manual editing on Windows</p></li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h2>0.1.5 (2015-09-02)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2>0.1.5 (2015-09-02)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>nodejs 0.12 api</p></li>
 <li><p>error handling</p></li>
 </ul>
 </div>
-<div class="section" id="id11">
-<h2>0.1.4 (2014-08-07)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2>0.1.4 (2014-08-07)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>documentation fix</p></li>
 <li><p>Linux binary tested on Ubuntu 14.04</p></li>
 </ul>
 </div>
-<div class="section" id="id12">
-<h2>0.1.3 (2014-8-6)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2>0.1.3 (2014-8-6)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>first release</p></li>
 </ul>
@@ -262,7 +287,10 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Change log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1.0.0 (2019-10-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.0.3 (2019-11-15)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.0.2 (2019-11-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.0.1 (2019-10-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.0.0 (2019-10-02)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc11-2019-10-01">1.0.0-rc11 (2019-10-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc10-2019-05-31">1.0.0-rc10 (2019-05-31)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc9-2019-05-23">1.0.0-rc9 (2019-05-23)</a></li>
@@ -270,17 +298,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#rc7-2018-12-10">1.0.0-rc7 (2018-12-10)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc6-2018-12-06">1.0.0-rc6 (2018-12-06)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rc5-2018-10-30">1.0.0-rc5 (2018-10-30)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.16 (2018-27-04)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.15 (2018-20-04)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.14 (2018-04-03)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.1.13 (2017-12-05)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">0.1.12 (2017-11-29)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">0.1.11 (2017-01-13)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">0.1.7 (2016-12-23)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">0.1.6 (2016-11-22)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">0.1.5 (2015-09-02)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">0.1.4 (2014-08-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">0.1.3 (2014-8-6)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.1.16 (2018-27-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.1.15 (2018-20-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">0.1.14 (2018-04-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.1.13 (2017-12-05)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.1.12 (2017-11-29)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">0.1.11 (2017-01-13)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">0.1.7 (2016-12-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">0.1.6 (2016-11-22)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">0.1.5 (2015-09-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">0.1.4 (2014-08-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">0.1.3 (2014-8-6)</a></li>
 </ul>
 </li>
 </ul>
@@ -317,7 +345,7 @@
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2014, SAP AG.
-      Last updated on Oct 02, 2019.
+      Last updated on Nov 14, 2019.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
         </div>

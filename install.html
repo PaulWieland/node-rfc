@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Installation &#8212; node-rfc 1.0.0 documentation</title>
+    <title>Installation &#8212; node-rfc 1.0.3 documentation</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -20,7 +20,7 @@
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
-          href="index.html">node-rfc 1.0.0 documentation</a></div>
+          href="index.html">node-rfc 1.0.3 documentation</a></div>
         <div class="rel" role="navigation" aria-label="related navigation">
           <a href="intro.html" title="Introduction"
              accesskey="P">previous</a> |
@@ -106,47 +106,23 @@ must be disabled:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode off
 </pre></div>
 </div>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Create the SAP NW RFC SDK home directory <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk</span></code> (this location is fixed, more info below)</p></li>
 <li><p>Set SAPNWRFC_HOME environment variable: <code class="docutils literal notranslate"><span class="pre">SAPNWRFC_HOME=/usr/local/sap/nwrfcsdk</span></code></p></li>
 <li><p>Unpack the SAP NW RFC SDK archive to it, e.g. <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk/lib</span></code> shall exist.</p></li>
-<li><p>Set the remote paths in SAP NW RFC SDK by running following bash script:</p>
-<blockquote>
-<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-
-<span class="nv">RPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SAPNWRFC_HOME</span><span class="s2">/lib&quot;</span>
-<span class="nb">cd</span> <span class="nv">$RPATH</span>
-
-<span class="c1">#</span>
-<span class="c1"># add LC_RPATH</span>
-<span class="c1">#</span>
-<span class="k">for</span> filename in *.dylib<span class="p">;</span> <span class="k">do</span>
-    install_name_tool -add_rpath <span class="nv">$RPATH</span> <span class="nv">$filename</span>
-<span class="k">done</span>
-
-<span class="c1">#</span>
-<span class="c1"># fix LC_LOAD_DYLIB</span>
-<span class="c1">#</span>
-
-<span class="c1"># in libisui18n</span>
-install_name_tool -change libicuuc.50.dylib @rpath/libicuuc.50.dylib libicui18n.50.dylib
-install_name_tool -change libicudata.50.dylib @rpath/libicudata.50.dylib libicui18n.50.dylib
-<span class="c1"># in libicuuc</span>
-install_name_tool -change libicudata.50.dylib @rpath/libicudata.50.dylib libicuuc.50.dylib
-</pre></div>
-</div>
-</div></blockquote>
-</li>
+<li><p>Set the remote paths in SAP NW RFC SDK by running <a class="reference external" href="https://github.com/SAP/PyRFC/blob/master/ci/utils/paths_fix.sh">paths_fix.sh</a> script.</p></li>
+<li><p>Unzip the <cite>unchar.zip</cite> file attached to <a class="reference external" href="https://launchpad.support.sap.com/#/notes/2573953">SAP OSS Note 2573953</a>
+and copy the <cite>uchar.h</cite> file to SAP NW RFC SDK include directory:</p></li>
 </ol>
-<p>This location is fixed to the default <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk/lib</span></code> rpath, embedded into node-rfc package published on npm.</p>
+<p>This default rpath location is <code class="docutils literal notranslate"><span class="pre">/usr/local/sap/nwrfcsdk/lib</span></code> is embedded into node-rfc package published on npm.</p>
 <p>After moving SAP NW RFC SDK to another location on your system, the rpaths must be adjusted,
 in SAP NW RFC SDK and in sapnwrfc.node libraries.</p>
 <p>For SAP NW RFC SDK, set the SAPNWRFC_HOME env variable to new SAP NW RFC SDK root directory and re-run the above script.</p>
 <p>For node-rfc:</p>
 <blockquote>
 <div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ npm install node-rfc@next
-$ <span class="nb">cd</span> node_modules/node-rfc/lib/binding/darwin-x64-node-v64
-$ install_name_tool -rpath /usr/local/sap/nwrfcsdk/lib /usr/new-path/lib sapnwrfc.node
+$ <span class="nb">cd</span> node_modules/node-rfc/lib/binding
+$ install_name_tool -rpath /usr/local/sap/nwrfcsdk/lib &lt;new path&gt; sapnwrfc.node
 </pre></div>
 </div>
 </div></blockquote>
@@ -165,7 +141,7 @@ $ install_name_tool -rpath /usr/local/sap/nwrfcsdk/lib /usr/new-path/lib sapnwrf
 <div class="section" id="test">
 <h3>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h3>
 <p>Check if the module can be found and loaded:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>var r = require (&#39;node-rfc)
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>const r = require (&#39;node-rfc)
 </pre></div>
 </div>
 <p>Call remote enabled function modules in NW backend system (maintain your test system parameters first):</p>
@@ -272,16 +248,25 @@ as an orphan and the output of the documentation build process (<code class="doc
 <p>GitHub then serves these files under a special <code class="docutils literal notranslate"><span class="pre">/pages/</span></code> url.</p>
 <p>To update GitHub Pages, copy everyhing under <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> and overwrite the existing files in the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch root:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm -Rf ~/tmp/html
-
 cp -r doc/_build/html ~/tmp/.
-
 git checkout gh-pages
-
 rm -Rf *.html *.js *.inv _* doc .buildinfo
-
 cp -R ~/tmp/html/. .
-
 touch .nojekyll
+git add .
+git commit -m <span class="s2">&quot;release vx.x.x&quot;</span>
+git push
+</pre></div>
+</div>
+</div>
+<div class="section" id="publish-release">
+<h3>Publish Release<a class="headerlink" href="#publish-release" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git tag -a v1.0.2 bb4501 -m <span class="s2">&quot;v1.0.2&quot;</span>
+git push origin --tags
+<span class="c1"># for each platform</span>
+git pull
+npm run prebuild --backend cmake-js -r napi --force --strip --verbose --tag-prefix
+npm run prebuild -r napi -u <span class="nv">$PTA</span> --verbose
 </pre></div>
 </div>
 </div>
@@ -346,7 +331,7 @@ touch .nojekyll
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2014, SAP AG.
-      Last updated on Oct 02, 2019.
+      Last updated on Nov 14, 2019.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
         </div>
