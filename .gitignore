@@ -9,8 +9,13 @@
 atlassian-ide-plugin.xml
 /build
 node_modules
-doc/_build
+/doc
 _sources
 .buildinfo
-prebuilds
-lib
+/prebuilds
+/lib
+/ci
+Makefile
+*.workspace
+*.inv
+
